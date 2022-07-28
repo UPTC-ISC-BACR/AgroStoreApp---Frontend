@@ -7,7 +7,6 @@ import { ApiAccessService } from "../services/apiAccess.service";
 })
 export class AuthGuard implements CanLoad {
 
-
   constructor(private route: Router, private apiAccessService: ApiAccessService) {
   }
 

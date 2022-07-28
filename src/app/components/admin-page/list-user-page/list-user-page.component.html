@@ -12,13 +12,12 @@
   </thead>
   <tbody>
   <tr *ngFor="let user of users">
-    <td> {{ user.id }} </td>
-    <td> {{ user.typeDocument }} </td>
-    <td> {{ user.name }} </td>
-    <td> {{ user.email }} </td>
+    <td> {{ user.document }} </td>
+    <td> {{ user.document_type }} </td>
+    <td> {{ user.full_name }} </td>
+    <td> {{ user.credentialId }} </td>
     <td> {{ user.city }} </td>
-    <td> {{ user.cellphone }} </td>
-
+    <td> {{ user.phone_number }} </td>
   </tr>
   </tbody>
 </table>

@@ -35,24 +35,28 @@ export class LoginComponent implements OnInit {
   login() {
     const email = this.form.value.usuario;
     const password = this.form.value.password;
-    //todo: Conectar login a backend
-    if (email == 'admin' && password == '1234'){
-      this.fakeLoading()
-    }else {
-      //MOstramos un mensaje de error
-      this.openSnackBar("usuario o contraseña ingresado invalido")
-      this.form.reset()
-    }
-    /*this.apiAccessService.login({email, password}).subscribe(res => {
-      if (res.code === 200){
-        this.router.navigate(['dashboard']);
+    this.loading = true;
+    this.apiAccessService.login(email, password).subscribe(res => {
+      if (res){
+        if (res.role === 'ADMIN'){
+          this.router.navigate(['admin']);
+        }
       }else {
-        //MOstramos un mensaje de error
-        this.loading = false;
-        this.openSnackBar("usuario o contraseña ingresado invalido")
-        this.form.reset()
+        //Mostramos un mensaje de error
+        this.invalidUser()
       }
-    });*/
+    },(error) => {
+      console.log(error)
+      if (error.status === 404){
+        this.invalidUser()
+      }
+    });
+  }
+
+  invalidUser(){
+    this.loading = false;
+    this.openSnackBar("usuario o contraseña ingresado invalido")
+    this.form.reset()
   }
 
   openSnackBar(message: string) {

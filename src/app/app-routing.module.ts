@@ -7,6 +7,9 @@ const routes: Routes = [
   {path:'admin',
     loadChildren: () => import('./components/admin-page/admin-page.module').then(x => x.AdminPageModule),
   },
+  {path:'user',
+    loadChildren: () => import('./components/users-page/users-page-routing.module').then(x => x.UsersPageRoutingModule)
+  },
   {path:'login', component:LoginComponent},
   {path:'**', redirectTo:'/login', pathMatch:'full'}
 ];
