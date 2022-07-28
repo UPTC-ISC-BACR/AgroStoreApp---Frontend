@@ -33,14 +33,14 @@ export class CreateUserPageComponent implements OnInit {
   }
 
   saveUser(): void {
-    const id = this.userForm.get('id')?.value;
-    const name = this.userForm.get('name')?.value;
-    const typeDocument = this.userForm.get('typedoc')?.value;
+    const document = this.userForm.get('id')?.value;
+    const full_name = this.userForm.get('name')?.value;
+    const document_type = this.userForm.get('typedoc')?.value;
     const email = this.userForm.get('email')?.value;
     const password = this.userForm.get('password')?.value;
     const city = this.userForm.get('city')?.value;
-    const cellphone = this.userForm.get('cellphone')?.value;
-    const user: User = new User(id,name,typeDocument,email,password,city,cellphone);
+    const phone_number = this.userForm.get('cellphone')?.value;
+    const user: User = {document,full_name,document_type,password,city,phone_number, credentialId: email};
     this.usersService.createUser(user);
     this.usersService.printUser(user);
 

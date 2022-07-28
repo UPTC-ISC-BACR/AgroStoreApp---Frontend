@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {BehaviorSubject, Observable} from "rxjs";
 import {environment} from "../environments/environment";
+import {Account} from "../app/models/account";
 import {map} from "rxjs/operators";
-import {Account} from "../app/models/Account";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -16,7 +16,7 @@ const httpOptions = {
 })
 export class ApiAccessService{
 
-  url = `${environment.apiUrl}/Acceso`;
+  url = `${environment.apiUrl}/auth`;
 
   private userSubject: BehaviorSubject<Account>;
   public user: Observable<Account>;
@@ -30,17 +30,17 @@ export class ApiAccessService{
     this.user = this.userSubject.asObservable();
   }
 
-  login(account: Account): Observable<Response>{
-    return this._http.post<Response>(this.url,account, httpOptions)/*.pipe(
+  login(email: string, password: string): Observable<Account>{
+    return this._http.post<Account>(this.url,{email, password}, httpOptions).pipe(
       map(res =>{
-        if (res.code === 200){
-          //const user: Account = res;
+        if (res){
+          const user: Account = res;
           localStorage.setItem('user', JSON.stringify(user));
           this.userSubject.next(user)
         }
         return res;
       })
-    );*/
+    );
   }
 
   logout() {

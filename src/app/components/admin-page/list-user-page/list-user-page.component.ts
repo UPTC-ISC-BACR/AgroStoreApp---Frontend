@@ -9,18 +9,20 @@ import { UsersServices} from "../../../../services/users.services";
 })
 export class ListUserPageComponent implements OnInit {
 
-  users: User[] = [];
+  public users: User[] = [];
 
   constructor(
     private usersService: UsersServices
   ) {
-
   }
 
   ngOnInit(): void {
-    this.usersService.getUsers().subscribe((response) => {
-      this.users = response;
-    })
+    this.getUsers()
+  }
 
+  getUsers(){
+    this.usersService.getUsers().subscribe((response) => {
+      this.users = response.data;
+    });
   }
 }

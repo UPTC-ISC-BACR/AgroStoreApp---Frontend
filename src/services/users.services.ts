@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import { User} from "../app/models/user";
+import {environment} from "../environments/environment";
+import {Response} from "../app/models/response";
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +11,10 @@ import { User} from "../app/models/user";
 
 export class UsersServices{
 
+  url = `${environment.apiUrl}/users`;
+
   constructor(
-    private httpClient: HttpClient
+    private http: HttpClient
   ) { }
 
   printUser(user:User){
@@ -18,14 +22,14 @@ export class UsersServices{
   }
 
   createUser(user: User): Observable<any> {
-    return this.httpClient.post('http://localhost:3000/users', user);
+    return this.http.post('http://localhost:3000/users', user);
   }
 
   deleteUser(id:number):Observable<any> {
-    return this.httpClient.post('http://localhost:3000/deleteu', id);
+    return this.http.post('http://localhost:3000/deleteu', id);
   }
 
-  getUsers(): Observable<User[]> {
-    return this.httpClient.get<User[]>('http://localhost:3000/listu');
+  getUsers(): Observable<Response> {
+    return this.http.get<Response>(this.url);
   }
 }
