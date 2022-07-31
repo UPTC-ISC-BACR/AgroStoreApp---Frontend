@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { User } from "../../../models/user";
 import { UsersServices} from "../../../../services/users.services";
 
@@ -17,38 +17,33 @@ export class CreateUserPageComponent implements OnInit {
     private usersService: UsersServices,
     private fb: FormBuilder
   ) {
-    this.userForm = fb.group({})
+    this.userForm = fb.group({
+      id: ['', Validators.required],
+      name: ['', Validators.required],
+      typedoc: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+      city: ['', Validators.required],
+      address: ['', Validators.required],
+      cellphone: ['', Validators.required]
+    })
   }
 
-  ngOnInit(): void {
-    this.userForm = new FormGroup({
-      id: new FormControl(''),
-      name: new FormControl(''),
-      typedoc : new FormControl(),
-      email : new FormControl(''),
-      password : new FormControl(''),
-      city : new FormControl(''),
-      cellphone : new FormControl(''),
-    });
-  }
+  ngOnInit(): void {}
 
   saveUser(): void {
     const document = this.userForm.get('id')?.value;
-    const full_name = this.userForm.get('name')?.value;
-    const document_type = this.userForm.get('typedoc')?.value;
+    const fullName = this.userForm.get('name')?.value;
+    const documentType = this.userForm.get('typedoc')?.value;
     const email = this.userForm.get('email')?.value;
     const password = this.userForm.get('password')?.value;
     const city = this.userForm.get('city')?.value;
-    const phone_number = this.userForm.get('cellphone')?.value;
-    const user: User = {document,full_name,document_type,password,city,phone_number, credentialId: email};
-    this.usersService.createUser(user);
+    const phoneNumber = this.userForm.get('cellphone')?.value;
+    const address = this.userForm.get('address')?.value;
+    const user: User = {document: document.toString(),fullName,documentType,password,city,phoneNumber: phoneNumber.toString(), email, address};
     this.usersService.printUser(user);
-
-    this.usersService.createUser(user).subscribe((response) => {
-      if(response.msg == "ok" ){
-        console.log("El usuario fue creado")
-      }
-      console.log('Server response', response.msg);
-    });
+    this.usersService.createUser(user).subscribe(res =>{
+      console.log(res)
+    })
   }
 }

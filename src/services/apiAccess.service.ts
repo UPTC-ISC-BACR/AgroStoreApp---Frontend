@@ -21,7 +21,7 @@ export class ApiAccessService{
   private userSubject: BehaviorSubject<Account>;
   public user: Observable<Account>;
 
-  public  get userData(): Account{
+  public get userData(): Account{
     return this.userSubject.value;
   }
 
