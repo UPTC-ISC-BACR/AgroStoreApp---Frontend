@@ -2,7 +2,7 @@
 <div class="right">
   <div class="background">
   <div class="col-md-12">
-    <form [formGroup]="userForm" >
+    <form [formGroup]="userForm" (ngSubmit)="saveUser()">
       <h1> Registrar un usuario </h1>
       <fieldset>
 
@@ -16,10 +16,10 @@
 
 
         <label for="typedoc">Tipo de documento:</label>
-       <select id="typedoc" type="text" name="typedoc" formControlName="typedoc">
-          <option value="cc">Cédula de Ciudadanía</option>
-          <option value="ce">Cédula de Extranjería</option>
-          <option value="pa">Pasaporte</option>
+       <select id="typedoc" name="typedoc" formControlName="typedoc">
+          <option value="CC">Cédula de Ciudadanía</option>
+          <option value="CE">Cédula de Extranjería</option>
+          <option value="PA">Pasaporte</option>
         </select>
 
         <label for="email">Correo eléctronico:</label>
@@ -31,12 +31,15 @@
         <label for="city">Ciudad:</label>
         <input type="text" id="city" formControlName="city">
 
+        <label for="city">Dirección:</label>
+        <input type="text" id="address" formControlName="address">
+
         <label for="cellphone">Número de celular:</label>
         <input type="number" id="cellphone" formControlName="cellphone">
 
       </fieldset>
 
-      <button type="button" (click)="saveUser()" >Crear usuario</button>
+      <button type="submit" [disabled]="userForm.invalid" >Crear usuario</button>
     </form>
   </div>
 </div>
