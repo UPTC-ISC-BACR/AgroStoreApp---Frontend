@@ -11,7 +11,16 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-
+}
+.right .background {
+  background: url("https://images.pexels.com/photos/5965653/pexels-photo-5965653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -28,59 +37,6 @@ h1 {
   margin: 0 0 16px 0;
   text-align: center;
   font-size: 24px
-}
-
-.background {
-  background: url("https://images.pexels.com/photos/5965653/pexels-photo-5965653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.background:before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
-}
-
-.background h1 {
-  font-size: 4rem;
-  font-weight: 700;
-}
-
- .custom-input, .btn-custom {
-  border: 0;
-  background: transparent;
-  border-bottom: 4px solid white;
-  border-radius: 0;
-  margin-bottom: 0;
-}
-
- .custom-input:focus {
-  border-color: white;
-  background: transparent;
-  color: white;
-}
-
- .btn-custom {
-  color: white;
-  cursor: pointer;
-}
-
- .display-5 {
-  font-size: 1.5rem;
-}
-
- #greeting {
-  margin-top: 2rem;
-  font-size: 2rem;
 }
 
 input[type="text"],

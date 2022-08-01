@@ -10,18 +10,21 @@ import {AdminPageRoutingModule} from "./admin-page-routing.module";
 import {SharedModule} from "../../shared/shared.module";
 
 @NgModule({
-  declarations: [
-    AdminPageComponent,
-    PrincipalPageAdminComponent,
-    CreateUserPageComponent,
-    ListUserPageComponent,
-    DeleteUserPageComponent,
-    UpdateUserPageComponent
-  ],
-  imports: [
-    CommonModule,
-    AdminPageRoutingModule,
-    SharedModule
-  ]
+    declarations: [
+        AdminPageComponent,
+        PrincipalPageAdminComponent,
+        CreateUserPageComponent,
+        ListUserPageComponent,
+        DeleteUserPageComponent,
+        UpdateUserPageComponent
+    ],
+    exports: [
+        PrincipalPageAdminComponent
+    ],
+    imports: [
+        CommonModule,
+        AdminPageRoutingModule,
+        SharedModule
+    ]
 })
 export class AdminPageModule { }

@@ -13,6 +13,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {SharedModule} from "./shared/shared.module";
+import {RouterModule} from "@angular/router";
+import { PrincipalPageUsersComponent } from './components/users-page/principal-page-users/principal-page-users.component';
+import {UsersPageComponent} from "./components/users-page/users-page.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import {SharedModule} from "./shared/shared.module";
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
