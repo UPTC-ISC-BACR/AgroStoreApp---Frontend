@@ -10,7 +10,7 @@ const routes: Routes = [
     loadChildren: () => import('./components/admin-page/admin-page.module').then(x => x.AdminPageModule), canLoad: [AuthGuard]
   },
   {path:'user',
-    loadChildren: () => import('./components/users-page/users-page-routing.module').then(x => x.UsersPageRoutingModule)
+    loadChildren: () => import('./components/users-page/users-page.module').then(x => x.UsersPageModule), canLoad: [AuthGuard]
   },
   {path:'login', component:LoginComponent},
   {path:'**', redirectTo:'/login', pathMatch:'full'}

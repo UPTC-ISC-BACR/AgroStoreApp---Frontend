@@ -21,8 +21,7 @@ export class UsersServices {
   constructor(
     private http: HttpClient,
     private accessService: ApiAccessService
-  ) {
-  }
+  ) {}
 
   printUser(user: User) {
     console.log(user)

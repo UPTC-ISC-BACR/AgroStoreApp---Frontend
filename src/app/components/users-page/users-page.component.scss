@@ -6,6 +6,7 @@
 }
 .logo{
   max-width: 150px;
+  max-height: 60px;
   padding: 0;
 }
 body,
@@ -42,6 +43,7 @@ nav {
   font-size: 20px;
   padding: 1rem 6vw;
   box-shadow: 0 0 30px lightgray;
+  max-height: 60px;
 }
 
 nav span {
@@ -71,6 +73,10 @@ nav a {
 }
 nav a:hover {
   color: #121212;
+}
+
+nav ul{
+  max-height: 60px;
 }
 
 nav .btn {
