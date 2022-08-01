@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {LoginComponent} from "./components/login/login.component";
+import {PrincipalPageAdminComponent} from "./components/admin-page/principal-page-admin/principal-page-admin.component";
 
 const routes: Routes = [
   {path:'', redirectTo:'/login', pathMatch:'full'},

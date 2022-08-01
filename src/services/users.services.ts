@@ -15,7 +15,7 @@ export class UsersServices{
 
   constructor(
     private http: HttpClient
-  ) { }
+) { }
 
   printUser(user:User){
     console.log(user)
@@ -29,7 +29,11 @@ export class UsersServices{
     return this.http.post('http://localhost:3000/deleteu', id);
   }
 
-  getUsers(): Observable<Response> {
-    return this.http.get<Response>(this.url);
+  //getUsers(): Observable<Response> {
+  //return this.http.get<Response>(this.url);
+  //}
+
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>('http://localhost:3000/listu');
   }
 }

@@ -22,7 +22,7 @@ export class ListUserPageComponent implements OnInit {
 
   getUsers(){
     this.usersService.getUsers().subscribe((response) => {
-      this.users = response.data;
+      this.users = response;
     });
   }
 }
