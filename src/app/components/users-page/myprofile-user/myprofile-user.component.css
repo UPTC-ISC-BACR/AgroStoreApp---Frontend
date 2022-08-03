@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: url("https://images.pexels.com/photos/5965653/pexels-photo-5965653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.background{
+
+}
+
+.text{
+  font-family: "Arial Narrow", sans-serif;
+  font-size: 20px;
+}
+
+.data{
+  border-collapse: separate;
+  border-spacing: 10px 5px;
+}
+.b{
+  font-family: "Arial Narrow Italic";
+  font-size: 15px;
+}
+.table {
+  border-collapse: separate;
+  border-spacing: 10px 5px;
+}
+
+.buttons{
+  float: right;
+}
+.container {
+  width: 750px;
+  height: 350px;
+  display: flex;
+  flex-direction: row;
+  font-family: "Arial Narrow", sans-serif;
+  font-size: 15px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px auto;
+  box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.5);
+}
+
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 10px;
+  padding: 10px;
+  min-width: 100px;
+  opacity: .85;
+}
+
+button:hover {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+button.edit {
+  background-color: #6b8c24;
+}
+
+button.delete {
+  background-color: #CC0400;
+}
+
+.panel{
+  display: flex;
+  flex-direction: column;
+}
+
+
+aside {
+  border: 3px solid #00000033;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 50px;
+  padding: 10px;
+  position: absolute;
+  right: -25vw;
+  transition: right 0.3s;
+}
+
+aside.show {
+  right: 0;
+}
+
+aside.confirm {
+  top: 0;
+}
+
+aside.cancel {
+  bottom: 0;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  background: url(https://i.pinimg.com/736x/49/c8/e4/49c8e403cd1929e9e7b02126824ff831.jpg );
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  float: left;
+  margin: 50px 30px 30px 0;
+  shape-outside: circle();
+  box-shadow: 0 2.5px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  align-self: center;
+  font-family: "Arial Narrow", sans-serif;
+  margin-bottom: 10px;
+  font-size: 30px;
+  color: #162c00;
+}
+
+.b{
+
+}
+
+
+p {
+  color : black;
+  font-weight: 300;
+  line-height: 26px;
+  font-size: 18px;
+}

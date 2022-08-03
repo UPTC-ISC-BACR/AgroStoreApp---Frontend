@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-//modulos
+//modulos Material
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import {MatSelectModule} from "@angular/material/select";
 import {MatFormFieldModule} from "@angular/material/form-field";
-
-//angular material
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [],
@@ -20,7 +20,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     MatProgressSpinnerModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    MatDialogModule
   ],
   exports:[
     ReactiveFormsModule,
@@ -29,7 +31,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     MatProgressSpinnerModule,
     MatInputModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule,
+    MatDialogModule
   ]
 })
 export class SharedModule { }

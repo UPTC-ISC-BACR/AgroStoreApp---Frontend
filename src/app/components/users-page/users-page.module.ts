@@ -5,14 +5,17 @@ import { UsersPageRoutingModule } from './users-page-routing.module';
 import { UsersPageComponent } from './users-page.component';
 import {SharedModule} from "../../shared/shared.module";
 import {PrincipalPageUsersComponent} from "./principal-page-users/principal-page-users.component";
+import {MyprofileUserComponent} from "./myprofile-user/myprofile-user.component";
 
 @NgModule({
   declarations: [
     UsersPageComponent,
     PrincipalPageUsersComponent,
+    MyprofileUserComponent
   ],
   exports: [
-    PrincipalPageUsersComponent
+    PrincipalPageUsersComponent,
+    MyprofileUserComponent
   ],
   imports: [
     CommonModule,
