@@ -13,9 +13,8 @@ body {
   position: relative;
 }
 .right .background {
-  background: url("https://images.pexels.com/photos/5965653/pexels-photo-5965653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-size: cover;
-  background-position: center;
+  background: url("https://images.pexels.com/photos/5965653/pexels-photo-5965653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center;
   min-height: 100vh;
   color: black;
   display: flex;
@@ -23,11 +22,8 @@ body {
   justify-content: center;
 }
 
-
-
 form {
-  max-width: 450px;
-  margin: 10px auto;
+  margin: 10px 10px;
   padding: 10px 10px;
   background: #f4f7f8;
   border-radius: 8px;
@@ -72,14 +68,12 @@ select {
 
 button {
   padding: 19px 39px 18px 16px;
-  color: #FFF;
   background-color: #6b8c24;
   font-size: 16px;
   text-align: center;
   font-style: normal;
   border-radius: 5px;
-  width: 100%;
-  border: 1px solid #6b8c24;
+  width: 91.5%;
   border-width: 1px 1px 3px;
   box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
 }
@@ -88,10 +82,6 @@ button:hover{
   background-color: #162c00;
   border: 1px solid #162c00;
 
-}
-fieldset {
-  margin-bottom: 0px;
-  border: none;
 }
 
 legend {
@@ -123,6 +113,18 @@ label.light {
   border-radius: 100%;
 }
 
+ul {
+  width: 100%;
+}
+ul li {
+  width: 45%;
+  display: inline-block;
+  margin: 10px 10px 10px 0;
+}
+
+.mat-dialog-content{
+  max-height: 100%;
+}
 
 
 
