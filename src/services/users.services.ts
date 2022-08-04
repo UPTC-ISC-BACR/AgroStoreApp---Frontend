@@ -32,6 +32,11 @@ export class UsersServices {
     return this.http.post(this.url, user,{headers});
   }
 
+  updateUser(user: User): Observable<Response>{
+    headers['x-token'] = this.accessService.userData.token
+    return this.http.post<Response>(this.url, user,{headers});
+  }
+
   deleteUser(id: number): Observable<any> {
     return this.http.post('http://localhost:3000/deleteu', id);
   }
