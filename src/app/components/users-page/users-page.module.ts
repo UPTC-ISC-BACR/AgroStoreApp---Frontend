@@ -6,16 +6,19 @@ import { UsersPageComponent } from './users-page.component';
 import {SharedModule} from "../../shared/shared.module";
 import {PrincipalPageUsersComponent} from "./principal-page-users/principal-page-users.component";
 import {MyprofileUserComponent} from "./myprofile-user/myprofile-user.component";
+import {MyProductsUserComponent} from "./my-products-user/my-products-user.component";
 
 @NgModule({
   declarations: [
     UsersPageComponent,
     PrincipalPageUsersComponent,
-    MyprofileUserComponent
+    MyprofileUserComponent,
+    MyProductsUserComponent
   ],
   exports: [
     PrincipalPageUsersComponent,
-    MyprofileUserComponent
+    MyprofileUserComponent,
+    MyProductsUserComponent
   ],
   imports: [
     CommonModule,
