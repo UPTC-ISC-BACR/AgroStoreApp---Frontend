@@ -3,10 +3,9 @@
   <img class="logo" src="assets/Logo_AgroStore.jpeg" alt="Imagen no encontrada">
   <ul>
     <li>
-      <a >Home</a>
-      <a href="#">Productos</a>
+      <a [routerLink]="'principal'" >Home</a>
       <a href="#">Mis ventas</a>
-      <a href="#">Mis productos</a>
+      <a href="" [routerLink]="'my-product'" >Mis productos</a>
       <a href="#">Historial de compras</a>
       <a href="#">+AgroStore</a>
       <button class="btn register" (click)="router.navigate(['user/my-profile'])">Mi Perfil</button>
@@ -17,6 +16,8 @@
 
 <div class="down">
   <div class="tab-content">
+
+
     <router-outlet></router-outlet>
   </div>
 </div>
