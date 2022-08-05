@@ -1,26 +1,21 @@
 <div class="main">
-  <div class="left">
-    <img class="icon" src="../../../assets/Logo_AgroStore_Basico.png" alt="">
-    <img class="logo" src="../../../assets/Logo_AgroStore.png" alt="">
+  <nav class="flex align-center">
+    <img class="logo" src="assets/Logo_AgroStore.jpeg" alt="Imagen no encontrada">
     <ul>
-      <li><a data-toggle="tab" [routerLink]="'createu'"><img src="../../../assets/Icon_Create_User.png" alt="">Crear usuario</a></li>
-      <li><a data-toggle="tab" [routerLink]="'deleteu'"><img src="../../../assets/Icon_Delete_User.png" alt=""> Eliminar
-        Usuario</a>
-        <a data-toggle="tab" [routerLink]="'updateu'"><img src="../../../assets/Icon_Update_User.png" alt=""> Actualizar
-          Usuario</a>
+      <li>
+        <a href="" [routerLink]="'listu'">Gestión de clientes</a>
+        <a href="#">Gestión de productos</a>
+        <a href="#">Gestión de acuerdos </a>
+        <a href="#">+AgroStore</a>
+        <button class="btn login"><img src="assets/Icon_Close_Sesion.png" alt="Imagen no encontrada"></button>
       </li>
-      <li><a data-toggle="tab" [routerLink]="'listu'"><img src="../../../assets/Icon_Show_User.png" alt=""> Listar usuarios</a></li>
-      <!--li><a data-toggle="tab" href="#overview"><i class="fa"></i> Agregar Producto</a></li>
-      <li><a data-toggle="tab" href=" #performance"><i class="fa"></i> Eliminar Producto</a></li>
-      <li><a data-toggle="tab" href="#analytics"><i class="fa"></i> Actualizar Producto</a></li>
-      <li><a data-toggle="tab" href="#landing"><i class="fa"></i> Listar productos</a></li>
-      <li><a data-toggle="tab" href="#landing"><i class="ma"></i> </a></li-->
     </ul>
-  </div>
+  </nav>
 
-  <div class="right">
+  <div class="down">
     <div class="tab-content">
       <router-outlet></router-outlet>
     </div>
   </div>
 </div>
+

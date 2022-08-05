@@ -1,4 +1,11 @@
 <div>
+  <div class="container">
+    <div class="btn-mas">
+      <label class="fa fa-plus"><img src="assets/Icon_Mas.png"></label>
+    </div>
+  </div>
+  <div class="background">
+  <h1>Gestión de Usuarios</h1>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <ng-container [matColumnDef]="col.key" *ngFor="let col of columnsSchema">
       <th mat-header-cell *matHeaderCellDef>{{ col.label }}</th>
@@ -23,5 +30,6 @@
     showFirstLastButtons
     aria-label="Select page of periodic elements">
   </mat-paginator>
+</div>
 </div>
 

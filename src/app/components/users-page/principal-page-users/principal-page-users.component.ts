@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-principal-page-users',
   templateUrl: 'principal-page-users.component.html',
-  styleUrls: ['principal-page-users.component.scss']
+  styleUrls: ['principal-page-users.component.css']
 })
 export class PrincipalPageUsersComponent implements OnInit {
 

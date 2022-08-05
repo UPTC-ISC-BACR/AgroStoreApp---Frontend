@@ -10,7 +10,8 @@ const routes: Routes = [
       {path: '', redirectTo: 'principal', pathMatch: 'full'},
       {path: 'principal', component:PrincipalPageUsersComponent},
       {path: 'my-profile', component:MyprofileUserComponent},
-      {path: 'my-products', component:MyProductsUserComponent}
+      {path: 'my-product', component:MyProductsUserComponent}
+
     ]}
 ];
 
