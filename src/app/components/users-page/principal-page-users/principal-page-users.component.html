@@ -1,14 +1,72 @@
-
+<div class="general">
 <div class="wrapper">
+  <div id="header">
+
   <form class="search">
     <input type="text" class="searchText" placeholder="Ingresa tu búsqueda">
     <input type="submit" class="searchButton" src="assets/Icon_Search.png" value="GO" >
   </form>
+  </div>
+  <ul class="nav">
+    <li>
+      <a href="#"><img src="assets/Icon_Filtre.png">&nbsp;&nbsp;&nbsp;&nbsp;Filtros</a>
+    </li>
+  </ul>
 </div>
 
+  <div class="filters">
+    <form class="filtertype">
+      <legend>Filtrar por precio</legend>
+      <input type="text" class="searchPrice" placeholder="Minimo">
+      <input type="text" class="searchPrice" placeholder="Máximo">
+      <input type="submit" class="searchButtonPrice" src="assets/Icon_Search.png" value="Buscar" >
+    </form>
+
+    <form class="filtertype">
+      <legend>Filtrar por tipo de producto</legend>
+      <input type="checkbox" id="fruits" class="dbgCheck" />
+      <label for="fruits">Frutas</label>
+      <br>
+      <input type="checkbox" id="vegetables" class="dbgCheck" />
+      <label for="vegetables">Aromaticas</label>
+      <br>
+      <input type="checkbox" id="tuberculous" class="dbgCheck" />
+      <label for="tuberculous">Tuberculos</label>
+      <br>
+      <input type="submit" class="searchButtonType" src="assets/Icon_Search.png" value="Buscar" >
+    </form>
+
+    <form class="filtertype">
+      <legend>Filtrar por unidad de venta</legend>
+      <input type="checkbox" id="kilogram" class="dbgCheck" />
+      <label for="kilogram">Kilogramo</label>
+      <br>
+      <input type="checkbox" id="pound" class="dbgCheck" />
+      <label for="pound">Libra</label>
+      <br>
+      <input type="checkbox" id="arroba" class="dbgCheck" />
+      <label for="arroba">Arroba</label>
+      <br>
+      <input type="submit" class="searchButtonType" src="assets/Icon_Search.png" value="Buscar" >
+    </form>
+
+    <form class="filtertype">
+      <legend>Filtrar por fecha</legend>
+      <input type="checkbox" id="day" class="dbgCheck" />
+      <label for="day">Hoy</label>
+      <br>
+      <input type="checkbox" id="week" class="dbgCheck" />
+      <label for="week">Última semana</label>
+      <br>
+      <input type="checkbox" id="fifteen" class="dbgCheck" />
+      <label for="fifteen">Últimos 15 días</label>
+      <br>
+      <input type="submit" class="searchButtonType" src="assets/Icon_Search.png" value="Buscar" >
+    </form>
+  </div>
+
+  <div class="products">
 <ul class="mystyle-products">
-
-
   <li class="product">
     <a href="14-single-product.html">
       <span class="onsale">Sale!</span>
@@ -229,3 +287,5 @@
     <a href="#" class="btn btn-dark btn-circle btn-review" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion ion-ios-move"></i></a>
   </li>
 </ul>
+  </div>
+</div>
