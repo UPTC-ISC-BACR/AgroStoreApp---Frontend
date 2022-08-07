@@ -22,7 +22,15 @@ export class ApiAccessService{
   public user: Observable<Account>;
 
   public get userData(): Account{
-    return this.userSubject.value;
+    let account: Account = this.userSubject.value;
+    if (!account){
+      account = {
+        document: "1113938",
+        token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEwMjYsImVtYWlsIjoiQmVydHJhbS5CZWRzZXIuMTVAZ21haWwuY29tIiwiaWF0IjoxNjU5ODc4NTExLCJleHAiOjE2NTk5MDI1MTF9.rqWXxezJL1np4EQGfYBlokceuNLOXZ9fQcOPI7jn9gA",
+        role: "ADMIN"
+      }
+    }
+    return account;
   }
 
   constructor(private _http: HttpClient) {

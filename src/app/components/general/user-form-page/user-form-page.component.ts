@@ -40,14 +40,14 @@ export class UserFormPageComponent implements OnInit {
 
   saveUser(): void {
     const document = this.userForm.get('document')?.value;
-    const fullName = this.userForm.get('full_name')?.value;
-    const documentType = this.userForm.get('document_type')?.value;
-    const email = this.userForm.get('credentialId')?.value;
+    const full_name = this.userForm.get('full_name')?.value;
+    const document_type = this.userForm.get('document_type')?.value;
+    const credentialId = this.userForm.get('credentialId')?.value;
     const password = this.userForm.get('password')?.value;
     const city = this.userForm.get('city')?.value;
-    const phoneNumber = this.userForm.get('phone_number')?.value;
+    const phone_number = this.userForm.get('phone_number')?.value;
     const address = this.userForm.get('address')?.value;
-    const user: User = {document: document.toString(),fullName,documentType,password,city,phoneNumber: phoneNumber.toString(), email, address};
+    const user: User = {document: document.toString(),full_name,document_type,password,city,phone_number: phone_number.toString(), credentialId, address};
     this.dialogRef.close(user)
   }
 }

@@ -34,11 +34,22 @@ export class UsersServices {
 
   updateUser(user: User): Observable<Response>{
     headers['x-token'] = this.accessService.userData.token
-    return this.http.post<Response>(this.url, user,{headers});
+    const id: string = user.document ?? ""
+    console.log(user)
+    return this.http.put<Response>(this.url+`/${id}`, user,{headers});
   }
 
-  deleteUser(id: number): Observable<any> {
-    return this.http.post('http://localhost:3000/deleteu', id);
+  deleteUser(email: string): Observable<Response> {
+    return this.http.patch<Response>(`${environment.apiUrl}/account/${email}`, {},{headers});
+  }
+
+  getUser(id: string): Observable<Response>{
+    headers['x-token'] = this.accessService.userData.token
+    return this.http.get<Response>(this.url+`/${id}`,{headers});
+  }
+
+  getLoggedUser(){
+    return this.getUser(this.accessService.userData?.document);
   }
 
   getUsers(): Observable<Response> {
