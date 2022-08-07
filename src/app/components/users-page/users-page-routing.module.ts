@@ -5,6 +5,8 @@ import {PrincipalPageUsersComponent} from "./principal-page-users/principal-page
 import {MyprofileUserComponent} from "./myprofile-user/myprofile-user.component";
 import {MyProductsUserComponent} from "./my-products-user/my-products-user.component";
 import {CreateProductPageComponent} from "./create-product-page/create-product-page.component";
+import {ProductPageComponent} from "./product-page/product-page.component";
+import {CreateSaleAgreementComponent} from "./create-sale-agreement/create-sale-agreement.component";
 
 const routes: Routes = [
   {path: '', component: UsersPageComponent, children: [
@@ -12,7 +14,10 @@ const routes: Routes = [
       {path: 'principal', component:PrincipalPageUsersComponent},
       {path: 'my-profile', component:MyprofileUserComponent},
       {path: 'my-product', component:MyProductsUserComponent},
-      {path: 'create-product', component:CreateProductPageComponent}
+      {path: 'create-product', component:CreateProductPageComponent},
+      {path: 'product-page', component:ProductPageComponent},
+      {path: 'create-sale-agreement', component:CreateSaleAgreementComponent}
+
     ]}
 ];
 

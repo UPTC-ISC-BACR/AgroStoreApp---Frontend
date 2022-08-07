@@ -10,13 +10,17 @@ import {SharedModule} from "./shared/shared.module";
 import {RouterModule} from "@angular/router";
 import {UserFormPageComponent} from "./components/general/user-form-page/user-form-page.component";
 import {ConfirmationDialogComponent} from "./components/general/confirmation-dialog/confirmation-dialog.component";
+import { ProductPageComponent } from './components/users-page/product-page/product-page.component';
+import { CreateSaleAgreementComponent } from './components/users-page/create-sale-agreement/create-sale-agreement.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UserFormPageComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    ProductPageComponent,
+    CreateSaleAgreementComponent
   ],
   imports: [
     BrowserModule,

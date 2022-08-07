@@ -4,10 +4,10 @@
   <ul>
     <li>
       <a [routerLink]="'principal'" >Home</a>
-      <a href="#">Mis ventas</a>
+      <a href="#" [routerLink]="'product-page'">Mis ventas</a>
       <a href="" [routerLink]="'my-product'" >Mis productos</a>
       <a href="#" [routerLink]="'create-product'" >Historial de compras</a>
-      <a href="#">+AgroStore</a>
+      <a href="#" [routerLink]="'create-sale-agreement'" >+AgroStore</a>
       <button class="btn register" (click)="router.navigate(['user/my-profile'])">Mi Perfil</button>
       <button class="btn login" [routerLink]="'login'"><img src="assets/Icon_Close_Sesion.png" alt="Imagen no encontrada"></button>
     </li>

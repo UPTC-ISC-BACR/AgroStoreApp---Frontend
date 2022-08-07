@@ -29,10 +29,9 @@ div{
 }
 
 .container{
-  z-index: 1;
   position: fixed;
-  bottom: 45px;
-  right: 45px;
+  z-index: 100;
+  margin-left: 5%;
 }
 
 #btn-mas:checked~ .redes a{
@@ -43,7 +42,7 @@ div{
 .btn-mas label{
   z-index: 1;
   cursor: pointer;
-  background: #6b8c24;
+  background: white;
   font-size: 18px;
 }
 
@@ -54,7 +53,7 @@ div{
 
 .btn-mas label:hover{
   cursor: pointer;
-  background: #162c00;
+  background:gainsboro;
   font-size: 18px;
 }
 
