@@ -13,8 +13,6 @@ const routes: Routes = [
       {path: 'my-profile', component:MyprofileUserComponent},
       {path: 'my-product', component:MyProductsUserComponent},
       {path: 'create-product', component:CreateProductPageComponent}
-
-
     ]}
 ];
 

@@ -5,8 +5,8 @@ import {MatTableDataSource} from "@angular/material/table";
 import {MatDialog} from "@angular/material/dialog";
 import {MatPaginator, MatPaginatorIntl} from "@angular/material/paginator";
 import {tap} from "rxjs";
-import {UserFormPageComponent} from "../user-form-page/user-form-page.component";
-import {ConfirmationDialogComponent} from "../confirmation-dialog/confirmation-dialog.component";
+import {UserFormPageComponent} from "../../general/user-form-page/user-form-page.component";
+import {ConfirmationDialogComponent} from "../../general/confirmation-dialog/confirmation-dialog.component";
 
 const COLUMNS_SCHEMA = [
   {
@@ -62,28 +62,33 @@ export class ListUserPageComponent implements OnInit {
     this.getUsers()
   }
 
-  edit(data: User) {
-    console.log(data)
+  edit(user: User) {
     const dialogRef = this.dialog.open(UserFormPageComponent, {
       width: '60%',
       height: '100%',
-      data: {edit:true,user:data}
+      data: {edit:true,user:user}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        //todo: conectar al servicio
-        console.log(result)
+        this.usersService.updateUser(result).subscribe((res => {
+          console.log(res.msg)
+          this.getUsers()
+        }))
       }
     });
   }
 
-  delete(id: any) {
-    const dialogRef = this.dialog.open(ConfirmationDialogComponent);
+  delete(email: string) {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      data: {message: "Estas seguro de que deseas eliminar tu usuario? "}
+    });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        //todo: conectar al servicio
-        console.warn(`Removido ${id}`)
+        this.usersService.deleteUser(email).subscribe((res) => {
+          console.log(res.msg)
+          this.getUsers()
+        });
       }
     });
   }

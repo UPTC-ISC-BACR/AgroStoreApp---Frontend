@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-my-products-user',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyProductsUserComponent implements OnInit {
 
-  constructor() { }
+  public router: Router
+
+  constructor(router: Router) {
+    this.router = router
+  }
 
   ngOnInit(): void {
   }
 
+  navigate(to: string){
+    this.router.navigate([to]);
+  }
 }

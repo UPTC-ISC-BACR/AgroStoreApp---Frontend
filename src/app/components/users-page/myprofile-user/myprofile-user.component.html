@@ -9,16 +9,16 @@
   <div class="text">
 
     <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mi Perfil</h1>
-    <p><b><br>Nombre completo :</b> Samuel Felipe Ruíz</p>
-    <p><b>Identificación :</b> 10023112502</p>
-    <p><b>Correo electrónico :</b> samuel.felipe@uptc.edu.co</p>
-    <p><b>Dirección :</b>Cra 82-12 Barrrio La Nieves</p>
-    <p><b>Ciudad :</b>Tunja<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Teléfono :</b>321412424<br><br></p>
+    <p><b><br>Nombre completo :</b> {{user?.full_name}}</p>
+    <p><b>Identificación :</b> {{user?.document}}</p>
+    <p><b>Correo electrónico :</b> {{user?.credentialId}}</p>
+    <p><b>Dirección :</b>{{user?.address}}</p>
+    <p><b>Ciudad :</b>{{user?.city}}<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Teléfono :</b>{{user?.phone_number}}<br><br></p>
 
     <div class="buttons">
       <section class="wrapper">
-        <button class="edit">Editar</button>
-        <button class="delete">Eliminar</button>
+        <button class="edit" (click)="edit()">Editar</button>
+        <button class="delete" (click)="delete()">Eliminar</button>
       </section>
     </div>
   </div>

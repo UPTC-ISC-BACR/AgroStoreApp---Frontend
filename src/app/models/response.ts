@@ -1,6 +1,6 @@
 export interface Response{
   success: number,
-  message: string,
+  msg: string,
   data: any
 }
 
