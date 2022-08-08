@@ -1,0 +1,17 @@
+<div class="products">
+  <ul class="mystyle-products">
+    <li class="product" *ngFor="let promiseData of salePromises">
+      <a>
+        <span class="onsale">Sale!</span>
+        <img alt="" class="attachment-shop_catalog "
+             src="https://www.hogarmania.com/archivos/202202/calendario-fruta-verduras-temporada-668x400x80xX-1.jpg"/>
+        <h3>{{promiseData.product.name}}</h3>
+        <span class="price">
+          <p>{{promiseData.salePromise.date}}</p>
+                <del> <span class="amount">{{promiseData.user.full_name}}</span> </del>
+                <ins> <span class="amount">{{promiseData.salePromise.total}}</span> </ins>
+          </span>
+      </a>
+    </li>
+  </ul>
+</div>

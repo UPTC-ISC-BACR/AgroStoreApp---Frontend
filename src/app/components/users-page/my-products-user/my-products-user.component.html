@@ -12,7 +12,7 @@
 
 <div class="container">
   <div class="btn-mas">
-    <label class="fa fa-plus" (click)="navigate('/user/create-product')">
+    <label class="fa fa-plus" (click)="createProduct()">
       <img src="assets/Icon_Mas.png"></label>
   </div>
 </div>
@@ -21,308 +21,26 @@
 </div>
     <div class="inferior">
 <ul class="mystyle-products">
-  <li class="product">
+  <li class="product" *ngFor="let product of products">
     <a href="14-single-product.html">
       <span class="onsale">Sale!</span>
       <img alt="" class="attachment-shop_catalog " src="https://www.hogarmania.com/archivos/202202/calendario-fruta-verduras-temporada-668x400x80xX-1.jpg" />
-      <h3>Frutas y Verduras</h3>
+      <h3>{{product.name}}</h3>
       <span class="price">
-          <p>Descripción del producto detalladamente</p>
-                <del> <span class="amount">399.000</span> </del>
-                <ins> <span class="amount">269.000</span> </ins>
-        <span class="sale-tag sale-tag-square">-33%</span>
-            </span>
+          <p>{{product.description}}</p>
+                <del> <span class="amount">{{product.units}}</span> </del>
+                <ins> <span class="amount">{{product.pricePerunit}}</span> </ins>
+      </span>
     </a>
-    <a class="button add_to_cart_button product_type_simple" rel="nofollow" href="#">
-      Mua ngay
-    </a>
+    <a class="button add_to_cart_button product_type_simple" rel="nofollow" href="#"></a>
     <a href="#" class="btn btn-dark btn-circle btn-review" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion ion-ios-move"></i></a>
     <div class="buttons">
       <section class="wrapper">
-        <button class="edit">Editar</button>
-        <button class="delete">Eliminar</button>
+        <button class="edit" (click)="edit(product)">Editar</button>
+        <button class="delete" (click)="delete(product.id)">Eliminar</button>
       </section>
     </div>
   </li>
-  <li class="product">
-    <a href="14-single-product.html">
-      <span class="onsale">Sale!</span>
-      <img alt="" class="attachment-shop_catalog " src="https://www.hogarmania.com/archivos/202202/calendario-fruta-verduras-temporada-668x400x80xX-1.jpg" />
-      <h3>Frutas y Verduras</h3>
-      <span class="price">
-          <p>Descripción del producto detalladamente</p>
-                <del> <span class="amount">399.000</span> </del>
-                <ins> <span class="amount">269.000</span> </ins>
-        <span class="sale-tag sale-tag-square">-33%</span>
-            </span>
-    </a>
-    <a class="button add_to_cart_button product_type_simple" rel="nofollow" href="#">
-      Mua ngay
-    </a>
-    <a href="#" class="btn btn-dark btn-circle btn-review" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion ion-ios-move"></i></a>
-    <div class="buttons">
-      <section class="wrapper">
-        <button class="edit">Editar</button>
-        <button class="delete">Eliminar</button>
-      </section>
-    </div>
-  </li>
-  <li class="product">
-    <a href="14-single-product.html">
-      <span class="onsale">Sale!</span>
-      <img alt="" class="attachment-shop_catalog " src="https://www.hogarmania.com/archivos/202202/calendario-fruta-verduras-temporada-668x400x80xX-1.jpg" />
-      <h3>Frutas y Verduras</h3>
-      <span class="price">
-          <p>Descripción del producto detalladamente</p>
-                <del> <span class="amount">399.000</span> </del>
-                <ins> <span class="amount">269.000</span> </ins>
-        <span class="sale-tag sale-tag-square">-33%</span>
-            </span>
-    </a>
-    <a class="button add_to_cart_button product_type_simple" rel="nofollow" href="#">
-      Mua ngay
-    </a>
-    <a href="#" class="btn btn-dark btn-circle btn-review" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion ion-ios-move"></i></a>
-    <div class="buttons">
-      <section class="wrapper">
-        <button class="edit">Editar</button>
-        <button class="delete">Eliminar</button>
-      </section>
-    </div>
-  </li>
-  <li class="product">
-    <a href="14-single-product.html">
-      <span class="onsale">Sale!</span>
-      <img alt="" class="attachment-shop_catalog " src="https://www.hogarmania.com/archivos/202202/calendario-fruta-verduras-temporada-668x400x80xX-1.jpg" />
-      <h3>Frutas y Verduras</h3>
-      <span class="price">
-          <p>Descripción del producto detalladamente</p>
-                <del> <span class="amount">399.000</span> </del>
-                <ins> <span class="amount">269.000</span> </ins>
-        <span class="sale-tag sale-tag-square">-33%</span>
-            </span>
-    </a>
-    <a class="button add_to_cart_button product_type_simple" rel="nofollow" href="#">
-      Mua ngay
-    </a>
-    <a href="#" class="btn btn-dark btn-circle btn-review" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion ion-ios-move"></i></a>
-    <div class="buttons">
-      <section class="wrapper">
-        <button class="edit">Editar</button>
-        <button class="delete">Eliminar</button>
-      </section>
-    </div>
-  </li>
-  <li class="product">
-    <a href="14-single-product.html">
-      <span class="onsale">Sale!</span>
-      <img alt="" class="attachment-shop_catalog " src="https://www.hogarmania.com/archivos/202202/calendario-fruta-verduras-temporada-668x400x80xX-1.jpg" />
-      <h3>Frutas y Verduras</h3>
-      <span class="price">
-          <p>Descripción del producto detalladamente</p>
-                <del> <span class="amount">399.000</span> </del>
-                <ins> <span class="amount">269.000</span> </ins>
-        <span class="sale-tag sale-tag-square">-33%</span>
-            </span>
-    </a>
-    <a class="button add_to_cart_button product_type_simple" rel="nofollow" href="#">
-      Mua ngay
-    </a>
-    <a href="#" class="btn btn-dark btn-circle btn-review" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion ion-ios-move"></i></a>
-    <div class="buttons">
-      <section class="wrapper">
-        <button class="edit">Editar</button>
-        <button class="delete">Eliminar</button>
-      </section>
-    </div>
-  </li>
-  <li class="product">
-    <a href="14-single-product.html">
-      <span class="onsale">Sale!</span>
-      <img alt="" class="attachment-shop_catalog " src="https://www.hogarmania.com/archivos/202202/calendario-fruta-verduras-temporada-668x400x80xX-1.jpg" />
-      <h3>Frutas y Verduras</h3>
-      <span class="price">
-          <p>Descripción del producto detalladamente</p>
-                <del> <span class="amount">399.000</span> </del>
-                <ins> <span class="amount">269.000</span> </ins>
-        <span class="sale-tag sale-tag-square">-33%</span>
-            </span>
-    </a>
-    <a class="button add_to_cart_button product_type_simple" rel="nofollow" href="#">
-      Mua ngay
-    </a>
-    <a href="#" class="btn btn-dark btn-circle btn-review" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion ion-ios-move"></i></a>
-    <div class="buttons">
-      <section class="wrapper">
-        <button class="edit">Editar</button>
-        <button class="delete">Eliminar</button>
-      </section>
-    </div>
-  </li>
-  <li class="product">
-    <a href="14-single-product.html">
-      <span class="onsale">Sale!</span>
-      <img alt="" class="attachment-shop_catalog " src="https://www.hogarmania.com/archivos/202202/calendario-fruta-verduras-temporada-668x400x80xX-1.jpg" />
-      <h3>Frutas y Verduras</h3>
-      <span class="price">
-          <p>Descripción del producto detalladamente</p>
-                <del> <span class="amount">399.000</span> </del>
-                <ins> <span class="amount">269.000</span> </ins>
-        <span class="sale-tag sale-tag-square">-33%</span>
-            </span>
-    </a>
-    <a class="button add_to_cart_button product_type_simple" rel="nofollow" href="#">
-      Mua ngay
-    </a>
-    <a href="#" class="btn btn-dark btn-circle btn-review" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion ion-ios-move"></i></a>
-    <div class="buttons">
-      <section class="wrapper">
-        <button class="edit">Editar</button>
-        <button class="delete">Eliminar</button>
-      </section>
-    </div>
-  </li>
-  <li class="product">
-    <a href="14-single-product.html">
-      <span class="onsale">Sale!</span>
-      <img alt="" class="attachment-shop_catalog " src="https://www.hogarmania.com/archivos/202202/calendario-fruta-verduras-temporada-668x400x80xX-1.jpg" />
-      <h3>Frutas y Verduras</h3>
-      <span class="price">
-          <p>Descripción del producto detalladamente</p>
-                <del> <span class="amount">399.000</span> </del>
-                <ins> <span class="amount">269.000</span> </ins>
-        <span class="sale-tag sale-tag-square">-33%</span>
-            </span>
-    </a>
-    <a class="button add_to_cart_button product_type_simple" rel="nofollow" href="#">
-      Mua ngay
-    </a>
-    <a href="#" class="btn btn-dark btn-circle btn-review" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion ion-ios-move"></i></a>
-    <div class="buttons">
-      <section class="wrapper">
-        <button class="edit">Editar</button>
-        <button class="delete">Eliminar</button>
-      </section>
-    </div>
-  </li>
-  <li class="product">
-    <a href="14-single-product.html">
-      <span class="onsale">Sale!</span>
-      <img alt="" class="attachment-shop_catalog " src="https://www.hogarmania.com/archivos/202202/calendario-fruta-verduras-temporada-668x400x80xX-1.jpg" />
-      <h3>Frutas y Verduras</h3>
-      <span class="price">
-          <p>Descripción del producto detalladamente</p>
-                <del> <span class="amount">399.000</span> </del>
-                <ins> <span class="amount">269.000</span> </ins>
-        <span class="sale-tag sale-tag-square">-33%</span>
-            </span>
-    </a>
-    <a class="button add_to_cart_button product_type_simple" rel="nofollow" href="#">
-      Mua ngay
-    </a>
-    <a href="#" class="btn btn-dark btn-circle btn-review" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion ion-ios-move"></i></a>
-    <div class="buttons">
-      <section class="wrapper">
-        <button class="edit">Editar</button>
-        <button class="delete">Eliminar</button>
-      </section>
-    </div>
-  </li>
-  <li class="product">
-    <a href="14-single-product.html">
-      <span class="onsale">Sale!</span>
-      <img alt="" class="attachment-shop_catalog " src="https://www.hogarmania.com/archivos/202202/calendario-fruta-verduras-temporada-668x400x80xX-1.jpg" />
-      <h3>Frutas y Verduras</h3>
-      <span class="price">
-          <p>Descripción del producto detalladamente</p>
-                <del> <span class="amount">399.000</span> </del>
-                <ins> <span class="amount">269.000</span> </ins>
-        <span class="sale-tag sale-tag-square">-33%</span>
-            </span>
-    </a>
-    <a class="button add_to_cart_button product_type_simple" rel="nofollow" href="#">
-      Mua ngay
-    </a>
-    <a href="#" class="btn btn-dark btn-circle btn-review" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion ion-ios-move"></i></a>
-    <div class="buttons">
-      <section class="wrapper">
-        <button class="edit">Editar</button>
-        <button class="delete">Eliminar</button>
-      </section>
-    </div>
-  </li>
-  <li class="product">
-    <a href="14-single-product.html">
-      <span class="onsale">Sale!</span>
-      <img alt="" class="attachment-shop_catalog " src="https://www.hogarmania.com/archivos/202202/calendario-fruta-verduras-temporada-668x400x80xX-1.jpg" />
-      <h3>Frutas y Verduras</h3>
-      <span class="price">
-          <p>Descripción del producto detalladamente</p>
-                <del> <span class="amount">399.000</span> </del>
-                <ins> <span class="amount">269.000</span> </ins>
-        <span class="sale-tag sale-tag-square">-33%</span>
-            </span>
-    </a>
-    <a class="button add_to_cart_button product_type_simple" rel="nofollow" href="#">
-      Mua ngay
-    </a>
-    <a href="#" class="btn btn-dark btn-circle btn-review" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion ion-ios-move"></i></a>
-    <div class="buttons">
-      <section class="wrapper">
-        <button class="edit">Editar</button>
-        <button class="delete">Eliminar</button>
-      </section>
-    </div>
-  </li>
-  <li class="product">
-    <a href="14-single-product.html">
-      <span class="onsale">Sale!</span>
-      <img alt="" class="attachment-shop_catalog " src="https://www.hogarmania.com/archivos/202202/calendario-fruta-verduras-temporada-668x400x80xX-1.jpg" />
-      <h3>Frutas y Verduras</h3>
-      <span class="price">
-          <p>Descripción del producto detalladamente</p>
-                <del> <span class="amount">399.000</span> </del>
-                <ins> <span class="amount">269.000</span> </ins>
-        <span class="sale-tag sale-tag-square">-33%</span>
-            </span>
-    </a>
-    <a class="button add_to_cart_button product_type_simple" rel="nofollow" href="#">
-      Mua ngay
-    </a>
-    <a href="#" class="btn btn-dark btn-circle btn-review" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion ion-ios-move"></i></a>
-    <div class="buttons">
-      <section class="wrapper">
-        <button class="edit">Editar</button>
-        <button class="delete">Eliminar</button>
-      </section>
-    </div>
-  </li>
-  <li class="product">
-    <a href="14-single-product.html">
-      <span class="onsale">Sale!</span>
-      <img alt="" class="attachment-shop_catalog " src="https://www.hogarmania.com/archivos/202202/calendario-fruta-verduras-temporada-668x400x80xX-1.jpg" />
-      <h3>Frutas y Verduras</h3>
-      <span class="price">
-          <p>Descripción del producto detalladamente</p>
-                <del> <span class="amount">399.000</span> </del>
-                <ins> <span class="amount">269.000</span> </ins>
-        <span class="sale-tag sale-tag-square">-33%</span>
-            </span>
-    </a>
-    <a class="button add_to_cart_button product_type_simple" rel="nofollow" href="#">
-      Mua ngay
-    </a>
-    <a href="#" class="btn btn-dark btn-circle btn-review" data-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion ion-ios-move"></i></a>
-    <div class="buttons">
-      <section class="wrapper">
-        <button class="edit">Editar</button>
-        <button class="delete">Eliminar</button>
-      </section>
-    </div>
-
-
-  </li>
-
 </ul>
     </div>
 </div>

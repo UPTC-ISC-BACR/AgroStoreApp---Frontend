@@ -62,7 +62,25 @@ export class ListUserPageComponent implements OnInit {
     this.getUsers()
   }
 
+  create(){
+    const dialogRef = this.dialog.open(UserFormPageComponent, {
+      width: '60%',
+      height: '100%',
+      data: {edit:false}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.usersService.createUser(result).subscribe((res => {
+          console.log(res.msg)
+          this.getUsers()
+        }))
+      }
+    });
+  }
+
   edit(user: User) {
+    console.log(user)
     const dialogRef = this.dialog.open(UserFormPageComponent, {
       width: '60%',
       height: '100%',

@@ -8,15 +8,6 @@
           <legend *ngIf="!editMode"><span class="principal">1</span> Escribe tu información básica</legend>
           <ul>
             <li>
-              <label for="id">Identificación:</label>
-              <input [readOnly]="editMode" type="number" id="id" name="id" formControlName="document">
-            </li>
-            <li *ngIf="editMode"></li>
-            <li>
-              <label for="name">Nombre:</label>
-              <input type="text" id="name" name="name" formControlName="full_name">
-            </li>
-            <li>
               <label for="typedoc">Tipo de documento:</label>
               <select id="typedoc" name="typedoc" formControlName="document_type">
                 <option value="CC">Cédula de Ciudadanía</option>
@@ -24,6 +15,15 @@
                 <option value="PA">Pasaporte</option>
               </select>
             </li>
+            <li>
+              <label for="id">Identificación:</label>
+              <input [readOnly]="editMode" type="number" id="id" name="id" formControlName="document">
+            </li>
+            <li>
+              <label for="name">Nombre:</label>
+              <input type="text" id="name" name="name" formControlName="full_name">
+            </li>
+            <li *ngIf="editMode"></li>
             <li>
               <label for="email">Correo eléctronico:</label>
               <input type="email" id="email" name="email" formControlName="credentialId">
