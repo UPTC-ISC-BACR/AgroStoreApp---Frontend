@@ -5,6 +5,13 @@
   align-items: center;
   background-color: #F5F5F5; }
 
+a {
+  font-family: Arial, sans-serif;
+  font-size: 15px; }
+
+a:hover {
+  color: #6b8c24; }
+
 .h1 {
   font-family: "Arial Narrow", sans-serif;
   font-size: 20px; }
