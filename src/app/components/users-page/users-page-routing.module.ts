@@ -6,7 +6,7 @@ import {MyprofileUserComponent} from "./myprofile-user/myprofile-user.component"
 import {MyProductsUserComponent} from "./my-products-user/my-products-user.component";
 import {CreateProductPageComponent} from "../general/create-product-page/create-product-page.component";
 import {ProductPageComponent} from "./product-page/product-page.component";
-import {CreateSaleAgreementComponent} from "./create-sale-agreement/create-sale-agreement.component";
+import {MyBuysComponent} from "./my-buys/my-buys.component";
 
 const routes: Routes = [
   {path: '', component: UsersPageComponent, children: [
@@ -16,8 +16,7 @@ const routes: Routes = [
       {path: 'my-product', component:MyProductsUserComponent},
       {path: 'create-product', component:CreateProductPageComponent},
       {path: 'product-page', component:ProductPageComponent},
-      {path: 'create-sale-agreement', component:CreateSaleAgreementComponent}
-
+      {path: 'my-buys', component:MyBuysComponent}
     ]}
 ];
 

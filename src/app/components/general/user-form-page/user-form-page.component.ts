@@ -22,6 +22,7 @@ export class UserFormPageComponent implements OnInit {
     this.editMode = data.edit
     //Crea el formulario de usuario
     this.userForm = fb.group({
+      id: [''],
       document: ['', Validators.required],
       full_name: ['', Validators.required],
       document_type: ['',  Validators.required],
@@ -39,6 +40,7 @@ export class UserFormPageComponent implements OnInit {
   ngOnInit(): void {}
 
   saveUser(): void {
+    const id = this.userForm.get('id')?.value;
     const document = this.userForm.get('document')?.value;
     const full_name = this.userForm.get('full_name')?.value;
     const document_type = this.userForm.get('document_type')?.value;
@@ -47,7 +49,7 @@ export class UserFormPageComponent implements OnInit {
     const city = this.userForm.get('city')?.value;
     const phone_number = this.userForm.get('phone_number')?.value;
     const address = this.userForm.get('address')?.value;
-    const user: User = {document: document.toString(),full_name,document_type,password,city,phone_number: phone_number.toString(), credentialId, address};
+    const user: User = {id:parseInt(id) ,document: document.toString(),full_name,document_type,password,city,phone_number: phone_number.toString(), credentialId, address};
     this.dialogRef.close(user)
   }
 }

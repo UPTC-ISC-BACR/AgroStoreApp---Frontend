@@ -1,5 +1,6 @@
 export interface Account{
-  document: string,
+  //id del usuario
+  id: number,
   token: string,
   role: string
 }

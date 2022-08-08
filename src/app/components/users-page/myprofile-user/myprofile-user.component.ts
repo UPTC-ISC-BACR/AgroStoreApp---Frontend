@@ -39,7 +39,7 @@ export class MyprofileUserComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result && this.user) {
+      if (result) {
         this.usersService.updateUser(result).subscribe((res => {
           console.log(res.msg)
           this.getUser()

@@ -35,6 +35,7 @@ export class ProductsService {
   }
 
   deleteProduct(id: number): Observable<Response> {
+    headers['x-token'] = this.accessService.userData.token
     return this.http.patch<Response>(this.url+`/${id}`, {},{headers});
   }
 
@@ -43,11 +44,18 @@ export class ProductsService {
     return this.http.get<Response>(this.url+`/${id}`,{headers});
   }
 
-  getProducts(): Observable<Response> {
-    return this.http.get<Response>(this.url);
+  getProducts(userId: number): Observable<Response> {
+    headers['x-token'] = this.accessService.userData.token
+    return this.http.get<Response>(this.url+`/getProductsToBuy/${userId}`, {headers});
   }
 
-  getUserProducts(id: number): Observable<Response>{
-    return this.http.get<Response>(this.url+`/getUsersProduct/${id}`)
+  getUserProducts(userId: number): Observable<Response>{
+    headers['x-token'] = this.accessService.userData.token
+    return this.http.get<Response>(this.url+`/getUsersProduct/${userId}`, {headers})
+  }
+
+  getProductsToBuy(userId: number){
+    headers['x-token'] = this.accessService.userData.token
+    return this.http.get<Response>(this.url+`/getProductsToBuy/${userId}`, {headers})
   }
 }

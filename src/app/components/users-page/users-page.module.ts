@@ -8,6 +8,7 @@ import {PrincipalPageUsersComponent} from "./principal-page-users/principal-page
 import {MyprofileUserComponent} from "./myprofile-user/myprofile-user.component";
 import {MyProductsUserComponent} from "./my-products-user/my-products-user.component";
 import {CreateProductPageComponent} from "../general/create-product-page/create-product-page.component";
+import { MyBuysComponent } from './my-buys/my-buys.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {CreateProductPageComponent} from "../general/create-product-page/create-
     PrincipalPageUsersComponent,
     MyprofileUserComponent,
     MyProductsUserComponent,
-    CreateProductPageComponent
+    CreateProductPageComponent,
+    MyBuysComponent
   ],
   exports: [
     PrincipalPageUsersComponent,
