@@ -1,0 +1,64 @@
+<div class="main">
+  <div class="right">
+    <div class="background">
+      <div class="camp">
+        <form [formGroup]="productForm" (ngSubmit)="saveProduct()">
+          <h1> Registrar un producto </h1>
+
+          <legend><span class="principal"></span> Escribe la información del producto</legend>
+
+          <fieldset>
+            <tr>
+              <th><label for="name">Nombre del producto:</label>
+                <input type="text" id="name" name="id" formControlName="name"></th>
+              <th><label for="typeproduct">Tipo de producto:</label>
+                <select id="typeproduct" type="text" name="typedoc" formControlName="type">
+                  <option value="FRUITS">Frutas</option>
+                  <option value="VEGETABLES">Hortalizas</option>
+                  <option value="TUBERS">Tuberculos</option>
+                  <option value="CEREALS">Cereales</option>
+                  <option value="LEGOMINOUS">Leguminosas</option>
+                </select></th>
+            </tr>
+            <tr>
+              <th><label for="date">Fecha de cosecha:</label>
+                <input type="date" id="date" name="id" formControlName="harvestDate"></th>
+              <th><label for="city">Ciudad:</label>
+                <input type="text" id="city" name="name" formControlName="harvestLocation">
+              </th>
+            </tr>
+
+            <tr>
+              <th><label for="available">Disponible:</label>
+                <input type="number" id="available" name="id" formControlName="quantityAvalible"></th>
+              <th><label for="unit">Unidad de medida:</label>
+                <select id="unit" type="text" name="typedoc" formControlName="units">
+                  <option value="LB">Libra</option>
+                  <option value="KG">Kilogramo</option>
+                  <option value="AR">Arroba</option>
+                </select>
+              </th>
+            </tr>
+
+            <tr>
+              <th><label for="pricePerUnit">Precio por unidad:</label>
+                <input type="number" id="pricePerUnit" name="id" formControlName="pricePerunit"></th>
+            </tr>
+          </fieldset>
+            <fieldset class="second">
+              <tr>
+                <th><label for="imagen">Carga de imagen:</label>
+                  <input type="file" accept="image/*" id="imagen" name="id" formControlName="image"></th>
+              </tr>
+              <tr>
+                <th><label>Descripción:</label>
+                  <textarea placeholder="Escribe aqui" formControlName="description"></textarea></th>
+              </tr>
+            </fieldset>
+          <button mat-raised-button *ngIf="!editMode" type="submit" [disabled]="productForm.invalid">Crear producto</button>
+          <button mat-raised-button *ngIf="editMode" type="submit" [disabled]="productForm.invalid">Editar producto</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

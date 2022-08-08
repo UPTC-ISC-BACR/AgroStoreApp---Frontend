@@ -4,7 +4,7 @@ import {UsersPageComponent} from "./users-page.component";
 import {PrincipalPageUsersComponent} from "./principal-page-users/principal-page-users.component";
 import {MyprofileUserComponent} from "./myprofile-user/myprofile-user.component";
 import {MyProductsUserComponent} from "./my-products-user/my-products-user.component";
-import {CreateProductPageComponent} from "./create-product-page/create-product-page.component";
+import {CreateProductPageComponent} from "../general/create-product-page/create-product-page.component";
 
 const routes: Routes = [
   {path: '', component: UsersPageComponent, children: [

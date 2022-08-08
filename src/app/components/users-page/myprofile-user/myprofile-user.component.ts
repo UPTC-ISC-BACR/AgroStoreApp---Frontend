@@ -4,6 +4,7 @@ import {UsersServices} from "../../../../services/users.services";
 import {MatDialog} from "@angular/material/dialog";
 import {UserFormPageComponent} from "../../general/user-form-page/user-form-page.component";
 import {ConfirmationDialogComponent} from "../../general/confirmation-dialog/confirmation-dialog.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-myprofile-user',
@@ -16,17 +17,21 @@ export class MyprofileUserComponent implements OnInit {
 
   constructor(
     private usersService: UsersServices,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.getUser();
+  }
+
+  private getUser() {
     this.usersService.getLoggedUser().subscribe((res) => {
       this.user = res.data
     })
   }
 
   edit() {
-    console.log(this.user)
     const dialogRef = this.dialog.open(UserFormPageComponent, {
       width: '60%',
       height: '100%',
@@ -35,8 +40,9 @@ export class MyprofileUserComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result && this.user) {
-        this.usersService.updateUser(this.user).subscribe((res => {
-          console.log(res.data)
+        this.usersService.updateUser(result).subscribe((res => {
+          console.log(res.msg)
+          this.getUser()
         }))
       }
     });
@@ -47,9 +53,11 @@ export class MyprofileUserComponent implements OnInit {
       data: {message: "Estas seguro de que deseas eliminar tu usuario?"}
     });
     dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        //todo: conectar al servicio
-        console.warn(`Removido ${this.user?.document}`)
+      if (result && this.user?.credentialId) {
+        this.usersService.deleteUser(this.user?.credentialId).subscribe((res) => {
+          console.log(res.msg)
+          this.router.navigate(['login'])
+        })
       }
     });
   }

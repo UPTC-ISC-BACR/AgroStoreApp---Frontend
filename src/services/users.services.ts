@@ -27,9 +27,9 @@ export class UsersServices {
     console.log(user)
   }
 
-  createUser(user: User): Observable<any> {
+  createUser(user: User): Observable<Response> {
     headers['x-token'] = this.accessService.userData.token
-    return this.http.post(this.url, user,{headers});
+    return this.http.post<Response>(this.url, user,{headers});
   }
 
   updateUser(user: User): Observable<Response>{

@@ -16,7 +16,7 @@ import {ConfirmationDialogComponent} from "./components/general/confirmation-dia
     AppComponent,
     LoginComponent,
     UserFormPageComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
   ],
   imports: [
     BrowserModule,
